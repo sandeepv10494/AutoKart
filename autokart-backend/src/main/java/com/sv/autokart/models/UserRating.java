@@ -19,6 +19,7 @@ public class UserRating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userRatingId;
 
+    private Long accessoryId;
     private Long userId;
     private String commentedBy;
     private Double rating;
