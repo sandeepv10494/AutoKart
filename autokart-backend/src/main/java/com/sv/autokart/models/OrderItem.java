@@ -25,4 +25,8 @@ public class OrderItem {
     @JoinColumn(name="accesoryId", referencedColumnName = "accesoryId")
     private Accessory accessory;
     private Instant createdOn;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="orderId", referencedColumnName = "orderId")
+    private Order order;
 }

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.time.Instant;
 
 @Data
 @AllArgsConstructor
@@ -30,4 +31,6 @@ public class User {
     private Gender gender;
     private Long phoneNumber;
     private UserRole userRole;
+    private Instant created;
+    private boolean enabled;
 }

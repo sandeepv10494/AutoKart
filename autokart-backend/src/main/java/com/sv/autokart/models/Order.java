@@ -7,12 +7,13 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "\"Orders\"")
 public class Order {
 
     @Id
@@ -24,9 +25,10 @@ public class Order {
     private String delieveryAddress;
     private Long totalPrice;
     private Long totalQuantity;
+    private Long totalItems;
 
-   @OneToMany
-    private List<OrderItem> orderItems;
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<OrderItem> orderItems;
 
     private Instant orderedDate;
 }
