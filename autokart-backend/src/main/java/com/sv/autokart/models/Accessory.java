@@ -21,13 +21,16 @@ public class Accessory {
     private String title;
     private String material;
     private String color;
+
+    @Lob
     private String description;
+
     private String imageUrl;
     private Long price;
     @ElementCollection
     private List<String> compatabilityModels;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "categoryId", referencedColumnName = "categoryId")
     private Categories categories;
 }

@@ -20,6 +20,8 @@ public class CartItem {
 
     private Long userId;
 
+    private Long price;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="accesoryId", referencedColumnName = "accesoryId")
     private Accessory accessory;
