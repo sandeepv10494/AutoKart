@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CartItemRequest {
+public class OrderItemRequest {
+    private Double price;
     private Long quantity;
     private Long accessoryId;
+    private String accessoryTitle;
+    private String accessoryImageUrl;
 }

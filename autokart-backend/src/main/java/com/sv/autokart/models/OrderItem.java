@@ -19,12 +19,10 @@ public class OrderItem {
 
     private Double price;
     private Long quantity;
-    private Long productId;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="accesoryId", referencedColumnName = "accesoryId")
-    private Accessory accessory;
-    private Instant createdOn;
+    private Long accessoryId;
+    private String accessoryTitle;
+    private String accessoryImageUrl;
+    private Instant orderedDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="orderId", referencedColumnName = "orderId")

@@ -22,6 +22,7 @@ public class CartItemService {
     private final CartItemRepository cartItemRepository;
     private final AccessoryRepository accessoryRepository;
     private final CartItemMapper cartItemMapper;
+    private final AuthService authService;
 
     @Transactional(readOnly = true)
     public List<CartItemListResponse> getAllCartItemForUser(Long userId){
@@ -35,7 +36,7 @@ public class CartItemService {
         Long price = accessory.getPrice() * cartItemRequest.getQuantity();
 
         CartItem cartItem = new CartItem();
-        cartItem.setUserId(cartItemRequest.getUserId());
+        cartItem.setUserId(authService.getCurrentUser().getUserId());
         cartItem.setQuantity(cartItemRequest.getQuantity());
         cartItem.setPrice(price);
         cartItem.setAccessory(accessory);

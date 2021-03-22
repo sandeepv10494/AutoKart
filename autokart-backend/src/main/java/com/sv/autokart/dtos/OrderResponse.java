@@ -1,28 +1,16 @@
-package com.sv.autokart.models;
-
+package com.sv.autokart.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.time.Instant;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "\"Orders\"")
-public class Order {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class OrderResponse {
     private Long orderId;
-
-    private Long userId;
-    private OrderPaymentMode orderPaymentMode;
-    private String delieveryAddress;
     private Long totalPrice;
     private Long totalQuantity;
     private Long totalItems;
